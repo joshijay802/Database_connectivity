@@ -1,3 +1,3 @@
-This is a python program which helps to connect with mysql localhost server and perform operations
+This is a python program which helps to connect with mysql localhost server and perform operations 
 
-Changing the readme file demo 
+this change is made in a different branch
