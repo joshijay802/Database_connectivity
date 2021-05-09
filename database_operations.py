@@ -27,21 +27,34 @@ def create_table():
 
                 print("\n1 - INT \n 2 - VARCHAR  \n 3 - FLOAT \n 4 - DATE")
                 col_type=int(input("Enter column type:"))
-                type_length=input("Enter length:")
+                
                 
                 if(col_type==1):
                     col_type_str='INT'
+                    type_length=input("Enter length:")
+                    #string concatination to make a table query        
+                    col_data+=table_column + ' ' + col_type_str + '(' + type_length + '),'           
+
                 elif(col_type==2):
                     col_type_str='VARCHAR'
-                elif(col_type==2):
+                    type_length=input("Enter length:")
+                    #string concatination to make a table query        
+                    col_data+=table_column + ' ' + col_type_str + '(' + type_length + '),'           
+
+                elif(col_type==3):
                     col_type_str='FLOAT'
-                elif(col_type==2):
+                    type_length=input("Enter length:")
+                    #string concatination to make a table query        
+                    col_data+=table_column + ' ' + col_type_str + '(' + type_length + '),'           
+
+                elif(col_type==4):
                     col_type_str='DATE'
+                    #string concatination to make a table query        
+                    col_data+=table_column + ' ' + col_type_str + ','
+
                 else:
                     print("Enter a valid choice!!")
         
-            #string concatination to make a table query        
-            col_data+=table_column + ' ' + col_type_str + '(' + type_length + '),'           
 
         #String slicing so the last comma is removed
         col_data=col_data[:-1]              
