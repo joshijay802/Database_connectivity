@@ -196,12 +196,20 @@ def view_data():
         for table_name in mycursor:
             print(table_name[0],end=',')    
         table_name=input("\nEnter table name:")
+        
+        mycursor.execute("SHOW COLUMNS FROM "+table_name)
+
+        key_column=[]
+        for column_name in mycursor:
+            key_column.append(column_name[0])
+
 
         sql="SELECT * FROM "+table_name
         mycursor.execute(sql)
 
         myresult=mycursor.fetchall()
 
+        print(key_column)        
         for i in myresult:
             print(i)
     
@@ -265,5 +273,3 @@ except:
         )
         mycursor=mydb.cursor()
         create_db()
-    
-
